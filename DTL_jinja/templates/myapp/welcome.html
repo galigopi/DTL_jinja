@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome DTL(django template language....!!</title>
+    <link href="{% static 'css/new.css'%}" rel="stylesheet">
+</head>
+<body>
+<h1>Emp list is..!!</h1>
+{% if elist %}
+<table border="1px">
+    <thead>
+    <th>Empid</th>
+    <th>Empname</th>
+    <th>Empsal</th>
+    <th>Empexp</th>
+    <th>Empadd</th>
+
+    </thead>
+    {% for Emp in elist %}
+    <tr>
+        <td>{{Emp.Empid}}</td>
+        <td>{{Emp.Empname}}</td>
+        <td>{{Emp.Empsal}}</td>
+        <td>{{Emp.Empadd}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<!...img src="{% static 'images/animal.jpg' %}"  alt="sorry no images pound" width="500px",hight="'100px">
+{% else %}
+<h2>sorry no records found...!!</h2>
+{% endif %}
+</body>
+</html>
